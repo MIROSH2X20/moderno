@@ -8,6 +8,7 @@ let uglify = require('gulp-uglify');
 let cssmin = require('gulp-cssmin');
 
 
+
 gulp.task('sass', function(){
   return gulp.src('app/scss/**/*.scss')
           .pipe(sass({outputStyle: 'expanded'}))
@@ -23,7 +24,9 @@ gulp.task('script', function(){
   return gulp.src([
     'node_modules/slick-carousel/slick/slick.js',
     'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-    'node_modules/mixitup/dist/mixitup.js'
+    'node_modules/mixitup/dist/mixitup.js',
+    'node_modules/rateyo/src/jquery.rateyo.js'
+    
 
   ])
   .pipe(concat('libs.min.js'))
@@ -35,7 +38,8 @@ gulp.task('script', function(){
 gulp.task('style', function(){
   return gulp.src([
     'node_modules/slick-carousel/slick/slick.css',
-    'node_modules/magnific-popup/dist/magnific-popup.css'
+    'node_modules/magnific-popup/dist/magnific-popup.css',
+    'node_modules/rateyo/src/jquery.rateyo.css'
   ])
   .pipe(concat('libs.min.css'))
   .pipe(cssmin())
