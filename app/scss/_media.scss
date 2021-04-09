@@ -1,0 +1,170 @@
+@media (max-width:1150px){
+
+  .footer__inner{
+    flex-wrap: wrap;
+  }
+
+  .footer__col-adress{
+    margin-bottom:30px ;
+    min-width: 100%;
+  }
+  .header__text{
+    display: none;
+  }
+  .circle__menu{
+  
+}
+
+@media (max-width:900px){
+
+  
+  .footer__col-social{
+    margin-top: 30px;
+    min-width: 100%;
+  }
+  .footer__inner{
+    justify-content: flex-start;
+  }
+  .footer__col-menu{
+    
+    & + &{
+      margin-left: 40px;
+    }
+
+  }
+}
+@media (max-width:840px){
+  .menu__list{
+    display: none;
+    background-color: $bg;
+    position: absolute;
+    top:150px;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    padding-bottom: 30px;
+    text-align: center;
+    a{
+      display: block;
+      padding: 10px 0;
+      border-bottom: 1px solid #fff;
+    }
+  }
+  .menu__list li{
+    display: block;
+    & + li{
+      margin-left: 0;
+    }
+
+  }
+  .circle__menu{
+    top: 62px;
+  }
+  .menu__btn{
+    width: 30px;
+    display: block;
+    cursor: pointer;
+    div{
+      background-color: #fff;
+      height: 3px;
+      & + div{
+        margin-top: 5px;
+      }
+    }
+  }
+}
+@media (max-width:640px){
+  .notification__box{
+    display: none;
+  }
+  .message__box{
+    display: none;
+  }
+  .circle__menu{
+    right: auto;
+    left: -13px;
+  }
+  
+}
+@media (max-width:540px){
+  .menu__list{
+    top: 70px;
+  }
+    .footer__col{
+      width: 100%;
+    }
+    .header__btn-logout.header__btn-login--on{
+      display: none;
+    }
+    .footer__col-menu{
+    
+    & + &{
+      margin-left: 0px;
+      margin-top: 30px;
+    }
+
+  }
+}
+@media (max-width:540px){
+  .header{
+    overflow: hidden;
+    
+  }
+  .circle__menu{
+    top: 62px;
+  }
+  .header__btn-menu{
+    display: block;
+  }
+  .header__btn-menu{
+    width: 100px;
+    height:90px;
+    background-color: $bg;
+    position: absolute;
+    right: 0;
+    top: 0;
+    &::before{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      font-size: 50px;
+      color: #fff;
+    }
+  }
+  .header__box{
+    transition: all .5s;
+    left: 70px;
+    position: absolute;
+    background-color: #f4f4f4;
+    width: 84%;
+    height: 90px;
+    &.active{
+      left: 100%;
+      right: 0;
+      
+    }
+  }
+  .header__logo{
+    margin-left: 60px;
+  }
+  .menu__btn{
+    position: absolute;
+    top: 40px;
+    div{
+      background-color: $bg;
+    }
+  }
+
+}
+}
+@media (min-width:840px){
+  .menu__list{
+    display: block !important;
+  }
+  .header__top-inner{
+    height: 70px;
+  }
+  
+  
+}
