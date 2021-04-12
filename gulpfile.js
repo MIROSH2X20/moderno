@@ -7,8 +7,10 @@ let concat = require('gulp-concat');
 let uglify = require('gulp-uglify');
 let cssmin = require('gulp-cssmin');
 
+
+
 gulp.task('sass', function(){
-  return gulp.src('app/scss/style.scss')
+  return gulp.src('app/scss/**/*.scss')
           .pipe(sass({outputStyle: 'expanded'}))
           .pipe(rename({suffix : '.min'}))
           .pipe(autoprefixer({
@@ -21,7 +23,12 @@ gulp.task('sass', function(){
 gulp.task('script', function(){
   return gulp.src([
     'node_modules/slick-carousel/slick/slick.js',
-    'node_modules/magnific-popup/dist/jquery.magnific-popup.js'
+    'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+    'node_modules/mixitup/dist/mixitup.js',
+    'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
+    'node_modules/rateyo/src/jquery.rateyo.js'
+    
+
   ])
   .pipe(concat('libs.min.js'))
   .pipe(uglify())
@@ -31,8 +38,11 @@ gulp.task('script', function(){
 
 gulp.task('style', function(){
   return gulp.src([
+    'node_modules/normalize.css/normalize.css',
     'node_modules/slick-carousel/slick/slick.css',
-    'node_modules/magnific-popup/dist/magnific-popup.css'
+    'node_modules/magnific-popup/dist/magnific-popup.css',
+    'node_modules/rateyo/src/jquery.rateyo.css',
+    'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css'
   ])
   .pipe(concat('libs.min.css'))
   .pipe(cssmin())
@@ -61,7 +71,7 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('watch', function(){
-  gulp.watch('app/scss/style.scss', gulp.parallel('sass'))
+  gulp.watch('app/scss/**/*.scss', gulp.parallel('sass'))
   gulp.watch('app/*.html', gulp.parallel('html'))
   gulp.watch('app/js/*.js', gulp.parallel('js'))
 });
